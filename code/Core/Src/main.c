@@ -99,7 +99,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  display_fsm(99, 99, 10);
+	  display_fsm(99, 99, 100);
 	  modify_fsm();
 	  auto_fsm();
 

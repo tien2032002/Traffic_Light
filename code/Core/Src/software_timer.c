@@ -23,28 +23,28 @@ int timer6_flag=0;
 int timer6_counter=0;
 
 void setTimer1(int duration) {
-	timer1_counter=duration;
+	timer1_counter=duration/CYCLE;
 	timer1_flag=0;
 
 }
 void setTimer2(int duration) {
-	timer2_counter=duration;
+	timer2_counter=duration/10;
 	timer2_flag=0;
 }
 void setTimer3(int duration) {
-	timer3_counter=duration;
+	timer3_counter=duration/CYCLE;
 	timer3_flag=0;
 }
 void setTimer4(int duration) {
-	timer4_counter=duration;
+	timer4_counter=duration/CYCLE;
 	timer4_flag=0;
 }
 void setTimer5(int duration) {
-	timer5_counter=duration;
+	timer5_counter=duration/CYCLE;
 	timer5_flag=0;
 }
 void setTimer6(int duration) {
-	timer6_counter=duration;
+	timer6_counter=duration/CYCLE;
 	timer6_flag=0;
 }
 

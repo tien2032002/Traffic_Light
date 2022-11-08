@@ -16,8 +16,8 @@ void auto_fsm() {
 		case INIT:
 			counter=RED_TIME;
 			updateLedBuffer(counter, 0);
-			setTimer4(RED_TIME*100);
-			setTimer5(100);
+			setTimer4(RED_TIME*1000);
+			setTimer5(1000);
 			state=AUTO_RED;
 			break;
 		case AUTO_RED:
@@ -41,14 +41,14 @@ void auto_fsm() {
 
 			if (timer5_flag==1) {
 				counter--;
-				setTimer5(100);
+				setTimer5(1000);
 			}
 
 			if (timer4_flag==1) {
 				counter=GREEN_TIME;
 				state=AUTO_GREEN;
-				setTimer4(GREEN_TIME*100);
-				setTimer5(100);
+				setTimer4(GREEN_TIME*1000);
+				setTimer5(1000);
 			}
 			if (flagForButtonPress[SELECT_IDX]==1) {
 				flagForButtonPress[SELECT_IDX]=0;
@@ -69,13 +69,13 @@ void auto_fsm() {
 			updateLedBuffer(counter, counter);
 			if (timer5_flag==1) {
 				counter--;
-				setTimer5(100);
+				setTimer5(1000);
 			}
 			if (timer4_flag==1) {
 				counter=RED_TIME;
 				state=AUTO_RED;
-				setTimer4(RED_TIME*100);
-				setTimer5(100);
+				setTimer4(RED_TIME*1000);
+				setTimer5(1000);
 			}
 			if (flagForButtonPress[SELECT_IDX]==1) {
 				flagForButtonPress[SELECT_IDX]=0;
@@ -97,13 +97,13 @@ void auto_fsm() {
 
 			if (timer5_flag==1) {
 				counter--;
-				setTimer5(100);
+				setTimer5(1000);
 			}
 			if (timer4_flag==1) {
 				counter=YELLOW_TIME;
 				state=AUTO_YELLOW;
 				setTimer4(YELLOW_TIME*100);
-				setTimer5(100);
+				setTimer5(1000);
 			}
 			if (flagForButtonPress[SELECT_IDX]==1) {
 				flagForButtonPress[SELECT_IDX]=0;

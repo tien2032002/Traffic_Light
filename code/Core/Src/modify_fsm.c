@@ -14,14 +14,14 @@ void blinking_led(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) {
 	case 0:
 		turn_off_all_led();
 		blinking_status=1;
-		setTimer3(25);
+		setTimer3(250);
 		break;
 	case 1:
 		HAL_GPIO_WritePin(GPIOx, GPIO_Pin, GPIO_PIN_SET);
 		if (timer3_flag==1) {
 			blinking_status=2;
 			turn_off_all_led();
-			setTimer3(25);
+			setTimer3(250);
 		}
 		break;
 	case 2:
@@ -29,7 +29,7 @@ void blinking_led(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) {
 		if (timer3_flag==1) {
 			blinking_status=1;
 			turn_off_all_led();
-			setTimer3(25);
+			setTimer3(250);
 		}
 		break;
 	default:
@@ -45,7 +45,7 @@ void modify_fsm() {
 	switch (state) {
 	case MODIFY_INIT:
 		state=MODIFY_RED;
-		setTimer2(1);
+		setTimer2(10);
 	case MODIFY_RED:
 		//display
 		updateLedBuffer(RED_TIME, 2);
@@ -58,7 +58,7 @@ void modify_fsm() {
 				RED_TIME=RED_TIME+10;
 				if (RED_TIME>=100) RED_TIME=RED_TIME-100;
 				updateLedBuffer(RED_TIME, 2);
-				setTimer2(100);
+				setTimer2(1000);
 				flagForButtonPress1s[MODIFY_IDX]=0;
 			}
 		}
@@ -80,7 +80,7 @@ void modify_fsm() {
 		if (flagForButtonPress[SELECT_IDX]) {
 			flagForButtonPress[SELECT_IDX]=0;
 			state=MODIFY_YELLOW;
-			setTimer2(1);
+			setTimer2(10);
 		}
 		break;
 
@@ -96,7 +96,7 @@ void modify_fsm() {
 				YELLOW_TIME=YELLOW_TIME+10;
 				if (YELLOW_TIME>=100) YELLOW_TIME=YELLOW_TIME-100;
 				updateLedBuffer(YELLOW_TIME, 3);
-				setTimer2(100);
+				setTimer2(1000);
 				flagForButtonPress1s[MODIFY_IDX]=0;
 			}
 		}
@@ -118,7 +118,7 @@ void modify_fsm() {
 		if (flagForButtonPress[SELECT_IDX]) {
 			flagForButtonPress[SELECT_IDX]=0;
 			state=MODIFY_GREEN;
-			setTimer2(1);
+			setTimer2(10);
 		}
 		break;
 
@@ -134,7 +134,7 @@ void modify_fsm() {
 				GREEN_TIME=GREEN_TIME+10;
 				if (GREEN_TIME>=100) GREEN_TIME=GREEN_TIME-100;
 				updateLedBuffer(GREEN_TIME, 4);
-				setTimer2(100);
+				setTimer2(1000);
 				flagForButtonPress1s[MODIFY_IDX]=0;
 			}
 		}
@@ -156,7 +156,7 @@ void modify_fsm() {
 		if (flagForButtonPress[SELECT_IDX]) {
 			flagForButtonPress[SELECT_IDX]=0;
 			state=INIT;
-			setTimer2(1);
+			setTimer2(10);
 		}
 		break;
 
