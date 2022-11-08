@@ -3192,10 +3192,10 @@ void modify_fsm() {
 
 	case MODIFY_GREEN:
 		//display
-		updateLedBuffer(GREEN_TIME, 2);
+		updateLedBuffer(GREEN_TIME, 4);
  80019cc:	4b38      	ldr	r3, [pc, #224]	; (8001ab0 <modify_fsm+0x2ac>)
  80019ce:	681b      	ldr	r3, [r3, #0]
- 80019d0:	2102      	movs	r1, #2
+ 80019d0:	2104      	movs	r1, #4
  80019d2:	4618      	mov	r0, r3
  80019d4:	f7ff fc66 	bl	80012a4 <updateLedBuffer>
 		blinking_led(GPIOA, GREEN1_Pin);

@@ -124,7 +124,7 @@ void modify_fsm() {
 
 	case MODIFY_GREEN:
 		//display
-		updateLedBuffer(GREEN_TIME, 2);
+		updateLedBuffer(GREEN_TIME, 4);
 		blinking_led(GPIOA, GREEN1_Pin);
 		blinking_led(GPIOA, GREEN2_Pin);
 
