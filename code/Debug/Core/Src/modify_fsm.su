@@ -1,0 +1,3 @@
+modify_fsm.c:12:6:blinking_led	16	static
+modify_fsm.c:40:6:turn_off_all_led	8	static
+modify_fsm.c:44:6:modify_fsm	8	static
